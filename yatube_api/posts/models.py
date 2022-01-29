@@ -65,4 +65,3 @@ class Follow(models.Model):
                 name='prevention_of_self_following',
             ),
         ]
-
