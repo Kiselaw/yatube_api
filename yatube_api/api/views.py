@@ -9,6 +9,18 @@ from api.serializers import (
 )
 from posts.models import Group, Post
 
+from rest_framework import mixins
+
+
+class CreateRetrieveDelete(
+    mixins.CreateModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.ListModelMixin,
+    mixins.DestroyModelMixin,
+    viewsets.GenericViewSet
+):
+    pass
+
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
@@ -46,7 +58,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         serializer.save(author=self.request.user, post_id=post_id)
 
 
-class FollowViewSet(viewsets.ModelViewSet):
+class FollowViewSet(CreateRetrieveDelete):
     serializer_class = FollowSerializer
     permission_classes = (permissions.IsAuthenticated,)
     filter_backends = (filters.SearchFilter,)

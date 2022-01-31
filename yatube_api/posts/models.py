@@ -41,6 +41,9 @@ class Comment(models.Model):
     created = models.DateTimeField(
         'Дата добавления', auto_now_add=True, db_index=True)
 
+    def __str__(self):
+        return self.text
+
 
 class Follow(models.Model):
     user = models.ForeignKey(
@@ -65,3 +68,6 @@ class Follow(models.Model):
                 name='prevention_of_self_following',
             ),
         ]
+
+    def __str__(self):
+        return f'user: {self.user}, author: {self.following}'
