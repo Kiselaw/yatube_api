@@ -17,7 +17,7 @@ git clone
 ```
 
 ```bash
-cd api_final_yatube
+cd yatube_api
 ```
 
 Create and activate a virtual environment:
