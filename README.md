@@ -1,6 +1,16 @@
-### Как запустить проект:
+## Yatube API
 
-Клонировать репозиторий и перейти в него в командной строке:
+The project allows users to get data from the Yatube project via API.
+
+### Technologies
+
+- Python 3.9.5
+- Django
+- Django REST framework
+
+### Installation and launch
+
+Clone the repository and go to it using the command line:
 
 ```bash
 git clone 
@@ -10,7 +20,7 @@ git clone
 cd api_final_yatube
 ```
 
-Cоздать и активировать виртуальное окружение:
+Create and activate a virtual environment:
 
 Windows:
 
@@ -40,13 +50,13 @@ source env/bin/activate
 python3 -m pip install --upgrade pip
 ```
 
-Установить зависимости из файла requirements.txt:
+Install dependencies from a file requirements.txt:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Выполнить миграции:
+Make migrations:
 
 Windows: 
 
@@ -60,7 +70,7 @@ macOS/Linux:
 python3 manage.py migrate
 ```
 
-Запустить проект:
+Launch:
 
 Windows:
 
@@ -73,3 +83,11 @@ macOS/Linux:
 ```bash
 python3 manage.py runserver
 ```
+
+### API documentation
+
+[Link to documentation in Redoc format](http://127.0.0.1:8000/redoc/)
+
+### License
+
+MIT
